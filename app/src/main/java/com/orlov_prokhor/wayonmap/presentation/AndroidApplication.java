@@ -3,6 +3,9 @@ package com.orlov_prokhor.wayonmap.presentation;
 
 import android.app.Application;
 import com.orlov_prokhor.wayonmap.presentation.internal.di.components.ApplicationComponent;
+import com.orlov_prokhor.wayonmap.presentation.internal.di.components.DaggerApplicationComponent;
+import com.orlov_prokhor.wayonmap.presentation.internal.di.modules.ApplicationModule;
+import com.squareup.leakcanary.LeakCanary;
 
 
 /**
@@ -20,22 +23,21 @@ public class AndroidApplication extends Application {
   }
 
   private void initializeInjector() {
-/*    this.applicationComponent = DaggerApplicationComponent.builder()
+    this.applicationComponent = DaggerApplicationComponent.builder()
                                                           .applicationModule(
                                                               new ApplicationModule(this))
-                                                          .build();*/
+                                                          .build();
   }
-
   public ApplicationComponent getApplicationComponent() {
     return this.applicationComponent;
   }
 
   private void initializeLeakDetection() {
-  /*  if (LeakCanary.isInAnalyzerProcess(this)) {
+    if (LeakCanary.isInAnalyzerProcess(this)) {
       // This process is dedicated to LeakCanary for heap analysis.
       // You should not init your app in this process.
       return;
     }
-    LeakCanary.install(this);*/
+    LeakCanary.install(this);
   }
 }

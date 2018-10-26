@@ -4,7 +4,6 @@ package com.orlov_prokhor.wayonmap.presentation.view.activity;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.UiSettings;
@@ -14,7 +13,7 @@ import com.orlov_prokhor.wayonmap.presentation.view.presenter.PathPointsActivity
 import com.orlov_prokhor.wayonmap.presentation.view.presenter.PathPointsActivityViewModelImpl;
 
 
-public class PathPointsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class PathPointsActivity extends BaseActivity implements OnMapReadyCallback {
 
   ActivityMainBinding         binding;
   PathPointsActivityViewModel viewModel;
@@ -22,7 +21,7 @@ public class PathPointsActivity extends AppCompatActivity implements OnMapReadyC
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    //   setContentView(R.layout.activity_main);
+
     binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
     viewModel = ViewModelProviders.of(this).get(PathPointsActivityViewModelImpl.class);
     binding.setViewModel(viewModel);

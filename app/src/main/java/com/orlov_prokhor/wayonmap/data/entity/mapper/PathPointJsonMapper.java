@@ -8,6 +8,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 import javax.inject.Inject;
 
+
 /**
  * Class used to transform from Strings representing json to valid objects.
  */

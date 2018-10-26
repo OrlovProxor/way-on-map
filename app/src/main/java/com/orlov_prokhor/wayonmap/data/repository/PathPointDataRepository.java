@@ -7,12 +7,16 @@ import com.orlov_prokhor.wayonmap.domain.PathPoint;
 import com.orlov_prokhor.wayonmap.domain.repository.PathPointsRepository;
 import io.reactivex.Observable;
 import java.util.List;
+import javax.inject.Inject;
+import javax.inject.Singleton;
 
+@Singleton
 public class PathPointDataRepository implements PathPointsRepository {
 
   private final PathPointDataStoreFactory pathPointDataStoreFactory;
   private final PathPointDataMapper       pathPointDataMapper;
 
+  @Inject
   public PathPointDataRepository(
       PathPointDataStoreFactory pathPointDataStoreFactory,
       PathPointDataMapper pathPointDataMapper) {
