@@ -5,6 +5,7 @@ import android.content.Context;
 import com.orlov_prokhor.wayonmap.domain.repository.PathPointsRepository;
 import com.orlov_prokhor.wayonmap.presentation.internal.di.modules.ApplicationModule;
 import com.orlov_prokhor.wayonmap.presentation.view.activity.BaseActivity;
+import com.orlov_prokhor.wayonmap.presentation.view.presenter.PathPointsActivityViewModelImpl;
 import dagger.Component;
 import javax.inject.Singleton;
 
@@ -13,11 +14,13 @@ import javax.inject.Singleton;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
 
-  void inject(BaseActivity baseActivity);
+  public void inject(BaseActivity baseActivity);
+
+  public void inject(PathPointsActivityViewModelImpl baseViewModel);
 
   //Exposed to sub-graphs.
-  Context context();
+  public Context context();
 
 
-  PathPointsRepository PathPointRepository();
+  public PathPointsRepository pathPointRepository();
 }

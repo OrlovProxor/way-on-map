@@ -18,6 +18,7 @@ public class PathPointsActivity extends BaseActivity implements OnMapReadyCallba
   ActivityMainBinding         binding;
   PathPointsActivityViewModel viewModel;
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -26,7 +27,10 @@ public class PathPointsActivity extends BaseActivity implements OnMapReadyCallba
     viewModel = ViewModelProviders.of(this).get(PathPointsActivityViewModelImpl.class);
     binding.setViewModel(viewModel);
 
+
     mapViewInit(savedInstanceState);
+
+
   }
 
   private void mapViewInit(Bundle savedInstanceState) {

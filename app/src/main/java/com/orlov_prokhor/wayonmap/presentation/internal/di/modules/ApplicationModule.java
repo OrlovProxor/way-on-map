@@ -22,14 +22,14 @@ public class ApplicationModule {
   }
 
   @Provides
-  Context getContext() {
+  public Context getContext() {
     return application;
   }
 
 
   @Provides
   @Singleton
-  PathPointsRepository provideUserRepository(PathPointDataRepository pathPointsRepository) {
+  public PathPointsRepository provideUserRepository(PathPointDataRepository pathPointsRepository) {
     return pathPointsRepository;
   }
 }

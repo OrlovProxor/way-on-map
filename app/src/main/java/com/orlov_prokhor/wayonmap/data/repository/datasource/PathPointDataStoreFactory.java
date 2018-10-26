@@ -29,7 +29,7 @@ public class PathPointDataStoreFactory {
 
 
   @Inject
-  PathPointDataStoreFactory(@NonNull Context context) {
+  public PathPointDataStoreFactory(@NonNull Context context) {
     this.context = context.getApplicationContext();
 
   }
