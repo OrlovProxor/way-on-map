@@ -14,7 +14,6 @@
 package com.orlov_prokhor.wayonmap.data.net;
 
 import android.support.annotation.Nullable;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.Callable;
@@ -66,15 +65,17 @@ class ApiConnection implements Callable<String> {
 
     try {
       this.response = okHttpClient.newCall(request).execute().body().string();
-    } catch (IOException e) {
+    } catch (RuntimeException e) {
+      e.printStackTrace();
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
   private OkHttpClient createClient() {
     final OkHttpClient okHttpClient = new Builder()
-                                          .readTimeout(10000, TimeUnit.MILLISECONDS)
-                                          .connectTimeout(15000, TimeUnit.MILLISECONDS).build();
+                                          .readTimeout(5000, TimeUnit.MILLISECONDS)
+                                          .connectTimeout(5000, TimeUnit.MILLISECONDS).build();
 
     return okHttpClient;
   }

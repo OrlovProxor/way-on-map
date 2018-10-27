@@ -2,8 +2,8 @@ package com.orlov_prokhor.wayonmap.data.entity.mapper;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
+import com.orlov_prokhor.wayonmap.data.entity.EstaxiRuRouteEntity;
 import com.orlov_prokhor.wayonmap.data.entity.PathPointEntity;
-import com.orlov_prokhor.wayonmap.data.entity.ServerResponse;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -23,6 +23,6 @@ public class PathPointJsonMapper {
 
   public List<PathPointEntity> transformPathPointCollection(String userListJsonResponse)
   throws JsonSyntaxException {
-    return gson.fromJson(userListJsonResponse, ServerResponse.class).coords;
+    return gson.fromJson(userListJsonResponse, EstaxiRuRouteEntity.class).coords;
   }
 }
